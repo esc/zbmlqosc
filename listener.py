@@ -12,7 +12,7 @@ socket.bind("tcp://*:5555")
 if not os.path.exists('db'):
     print("db not found, creating")
     ct = bcolz.ctable([np.empty(0, dtype="i8"),
-                       np.empty(0, dtype="i8")],
+                       np.empty(0, dtype="f64")],
                       names=['time', 'value'],
                       rootdir='db',
                       )
