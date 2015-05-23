@@ -22,7 +22,7 @@ else:
 
 while True:
     message = socket.recv()
-    print("Received request: %s" % message)
+    print("Received request")
     time = struct.unpack('l', message[:8])
     value = struct.unpack('d', message[8:])
     ct.append((time, value))
