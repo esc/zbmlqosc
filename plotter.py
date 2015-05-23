@@ -12,7 +12,6 @@ def animate(i):
     yar = [j[1] for j in b[-10:]]
     ax1.clear()
     ax1.plot(xar, yar)
-    print(yar, xar)
 
 ani = animation.FuncAnimation(fig, animate, interval=10)
 plt.show()

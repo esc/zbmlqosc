@@ -12,8 +12,6 @@ socket.connect("tcp://localhost:5555")
 while True:
     current = int(time.time())
     request = struct.pack('l', current) + struct.pack('d', math.sin(current))
-    print("Sending request")
     time.sleep(1)
     socket.send(bytes(request))
     message = socket.recv()
-    print("%s" % message)
