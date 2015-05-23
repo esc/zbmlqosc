@@ -1,14 +1,19 @@
-import zmq
+import math
+import struct
 import time
 
+import zmq
 
 context = zmq.Context()
 
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
-for request in range(10):
-    print("Sending request %s" % request)
+
+while True:
+    current = int(time.time())
+    request = struct.pack('l', current) + struct.pack('d', math.sin(current))
+    print("Sending request")
     time.sleep(1)
-    socket.send(str(request).encode('ascii'))
+    socket.send(bytes(request))
     message = socket.recv()
-    print("Received reply %s [ %s ]" % (request, message))
+    print("%s" % message)
