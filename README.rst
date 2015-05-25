@@ -38,7 +38,8 @@ In three separate shells (hint: use tmux), run:
 
     $ python plotter.py
 
-You can then run ``sender.py`` again and again and watch the graph change.
+You should then see a sine-wave being showen by the ``plotter.py``. This is the
+data being sent by ``sender.py`` to the ``listener.py``.
 
 License
 -------
